@@ -33,9 +33,7 @@ public class YouKuSearch {
     Document document = requestAPI(keyword);
     if (document==null)
       return videos;
-   //System.out.println(document);
     Elements elements = document.select("div#direct_touch");
-    System.out.println(elements);
     for (Element element : elements){
       Video video = createVideo(element);
       videos.add(video);

@@ -39,14 +39,11 @@ public class MailService {
         MimeMessage mailMessage = mailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mailMessage, true, "GBK");
-            System.out.println("from:"+from);
             helper.setFrom(from);
             helper.setTo(user.getEmail());
-            System.out.println("to:"+user.getEmail());
             helper.setSubject(TITLE_SIGN_UP);
-            String link = "http://127.0.0.1:8888/validate/" + token;
+            String link = "http://47.93.185.30/validate/" + token;
             String message = String.format(CONTENT, user.getNickname(), link, link, user.getEmail());
-            System.out.println("message"+message);
             helper.setText(message, true);
             mailSender.send(mailMessage);
         } catch (MessagingException e) {

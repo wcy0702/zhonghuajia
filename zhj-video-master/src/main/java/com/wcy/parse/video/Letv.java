@@ -44,7 +44,9 @@ public class Letv implements Parser<Video> {
         video.setTitle(title);
         String image = playurl.getString("pic").replace("120_90", "360_180");
         video.setImage(image);
+        //获取域名
         String domain = playurl.getJSONArray("domain").getString(0);
+        //获取最清晰的播放地址
         String dispatch = getDispatch(playurl.getJSONObject("dispatch"));
         JSONObject yuanxian = object.getJSONObject("msgs").getJSONObject("yuanxian");
         String locationUrl;

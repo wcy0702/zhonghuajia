@@ -34,7 +34,6 @@ public class VideoSearch {
     if (document==null)
       return videos;
     Elements elements = document.select("div.a_temp2.j-list");
-    System.out.println(elements);
     for (Element element : elements){
       Video video = createVideo(element);
       videos.add(video);

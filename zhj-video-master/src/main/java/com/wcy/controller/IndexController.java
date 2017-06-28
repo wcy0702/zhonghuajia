@@ -80,8 +80,8 @@ public class IndexController {
 		model.addAttribute("navIndex", 1);
 		String keyword = request.getParameter("wd");
 		if (StringUtils.isNotEmpty(keyword)) {
-			//List<Video> videos = videoSearch.searchVideos(keyword);
-			List<Video> videos = youKuSearch.searchVideos(keyword);
+			List<Video> videos = videoSearch.searchVideos(keyword);
+			//List<Video> videos = youKuSearch.searchVideos(keyword);
 			model.addAttribute("videos", videos);
 			model.addAttribute("hasResult", true);
 			model.addAttribute("size", videos.size());
@@ -133,7 +133,6 @@ public class IndexController {
 	 */
 	@GetMapping("/login")
 	public String login() {
-		System.out.println("login");
 		return "login";
 	}
 

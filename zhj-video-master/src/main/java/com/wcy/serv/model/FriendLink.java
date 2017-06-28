@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
  * 友情链接 Created by Silence on 2017/3/8.
  */
 @Data
-@NoArgsConstructor
 public class FriendLink {
 
 	private Integer id;
